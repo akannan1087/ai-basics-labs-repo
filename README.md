@@ -1,145 +1,289 @@
-# ai-basics-labs-repo
-🚀 AI-Assisted DevOps Hands-on Labs
+# 🚀 AI-Assisted DevOps Hands-on Labs
 
-Welcome to the AI-Assisted DevOps Hands-on Labs.
+Welcome to the **AI-Assisted DevOps Hands-on Labs**.
 
-This repository is designed to help DevOps engineers learn how to use Generative AI, Large Language Models (LLMs), and AI Agents to improve DevOps productivity.
+This repository is designed to help DevOps engineers learn how to use **Generative AI, Large Language Models (LLMs), Prompt Engineering, AI Assistants, and AI Agents** to improve DevOps productivity.
 
 Repository:
 
+```text
 https://github.com/akannan1087/ai-basics-labs-repo
-🖥️ Lab Environment
+```
+
+---
+
+# 🖥️ Lab Environment
 
 For these labs, we will use:
 
-AWS EC2
-Ubuntu 24.04 LTS
-Python 3
-Git
-Python Virtual Environment
-OpenAI Python SDK
+* AWS EC2
+* Ubuntu 24.04 LTS
+* t2.small
+* Python 3
+* Git
+* Python Virtual Environment
+* OpenAI Python SDK
+* OpenAI API
 
-☁️ Step 1 — Create an Ubuntu EC2 Instance with instance type t2.small
+---
 
-🔐 Step 2 — Connect to the EC2 Instance
+# ☁️ Step 1 — Create Ubuntu EC2 Instance
 
-🔄 Step 3 — Update Ubuntu
+Create an EC2 instance with:
 
-After connecting to the EC2 instance:
+```text
+OS            : Ubuntu 24.04 LTS
+Instance Type : t2.small
+Storage       : 10 GB+
+Security      : Allow SSH - Port 22
+```
+
+---
+
+# 🔐 Step 2 — Connect to EC2
+
+```bash
+ssh -i your-key.pem ubuntu@EC2-PUBLIC-IP
+```
+
+---
+
+# 🔄 Step 3 — Update Ubuntu
+
+```bash
 sudo apt update
+```
 
-Verify Ubuntu version:
+Verify:
+
+```bash
 cat /etc/os-release
+```
 
-You should see something similar to:
+You should see:
+
+```text
 Ubuntu 24.04 LTS
+```
 
-🐍 Step 4 — Verify Python
+---
+
+# 🐍 Step 4 — Verify Python
+
+```bash
+python3 --version
+```
 
 Ubuntu 24.04 normally includes Python 3.
 
+---
+
+# 📦 Step 5 — Install Required Packages
+
+```bash
+sudo apt install git python3-pip python3-venv -y
+```
+
 Verify:
-python3 --version
 
-📦 Step 5 — Install Python Virtual Environment Support
-
-Install the required Python packages:
-sudo apt install python3-pip python3-venv -y
-Verify pip:
+```bash
+git --version
 pip3 --version
+```
 
-📥 Step 6 — Clone the AI Labs Repository
-Clone the repository:
+---
 
+# 🔑 Step 6 — Create OpenAI API Key
+
+Go to:
+
+```text
+https://platform.openai.com/
+```
+
+Login to your OpenAI account.
+
+Navigate to:
+
+```text
+Dashboard
+   ↓
+API Keys
+   ↓
+Create new secret key
+```
+
+Give the key a name such as:
+
+```text
+coachdevops-ai-labs
+```
+
+Copy and save the API key securely.
+
+⚠️ **Never share or commit your API key to GitHub.**
+
+> Note: ChatGPT subscription and OpenAI API usage are separate. API usage may require billing or credits.
+
+---
+
+# 📥 Step 7 — Clone the Repository
+
+```bash
 git clone https://github.com/akannan1087/ai-basics-labs-repo.git
+```
 
 Verify:
+
+```bash
 ls
+```
 
 You should see:
+
+```text
 ai-basics-labs-repo
+```
 
 Enter the repository:
+
+```bash
 cd ai-basics-labs-repo
+```
 
-🌿 Step 7 — Create a Python Virtual Environment
+---
 
-From inside the repository:
+# 🌿 Step 8 — Create Python Virtual Environment
 
+```bash
 python3 -m venv venv
+```
 
-Activate the virtual environment:
+Activate:
 
+```bash
 source venv/bin/activate
+```
 
 Your terminal should now show:
 
+```text
 (venv)
+```
 
 Example:
 
+```text
 (venv) ubuntu@ip-172-31-xx-xx:~/ai-basics-labs-repo$
+```
 
-📦 Step 8 — Install Python Dependencies
+---
+
+# 📦 Step 9 — Install Python Dependencies
 
 Upgrade pip:
+
+```bash
 pip install --upgrade pip
-Install the required packages:
+```
+
+Install:
+
+```bash
 pip install openai python-dotenv
+```
 
 Verify:
 
+```bash
 pip list
+```
 
-You should see packages such as:
+You should see:
 
+```text
 openai
 python-dotenv
+```
 
-🔑 Step 9 — Configure the OpenAI API Key
+---
+
+# 🔐 Step 10 — Configure OpenAI API Key
+
+Create the `.env` file:
+
+```bash
 nano .env
+```
 
 Add:
 
+```text
 OPENAI_API_KEY=your-openai-api-key
+```
 
-Save the file.
-In nano:
-CTRL + O Enter CTRL + X
+Save in nano:
 
-⚠️ Important — Protect Your API Key
+```text
+CTRL + O
+Enter
+CTRL + X
+```
 
-Never commit your .env file to GitHub.
+---
 
-Verify .gitignore contains:
+# ⚠️ Protect Your API Key
 
+Never commit `.env` to GitHub.
+
+Make sure `.gitignore` contains:
+
+```text
 .env
 venv/
 __pycache__/
+```
 
-You can verify with:
+Verify:
 
+```bash
 cat .gitignore
+```
 
-🧪 Step 10 — Run AI Lab 01
-Navigate to the AI Lab 01 directory if the lab is stored in a separate folder:
+---
 
+# 🧪 Step 11 — Run AI Lab 01
+
+Navigate to Lab 01:
+
+```bash
 cd ai-lab-01
+```
 
-Verify files:
+Verify:
 
+```bash
 ls
+```
 
-You should see something similar to:
+You should see:
 
+```text
 hello-ai.py
 README.md
+```
 
-Run the application:
+Run:
 
+```bash
 python hello-ai.py
+```
 
-🤖 Expected Flow
+---
+
+# 🤖 Expected Flow
+
+```text
 DevOps Engineer
        |
        | Prompt
@@ -158,42 +302,106 @@ AI Response
        |
        ↓
 Ubuntu Terminal
+```
 
-✅ Expected Result
+---
+
+# ✅ Expected Result
 
 You should see output similar to:
 
+```text
 Sending question to CoachDevOps AI...
 
 ============================================================
 🤖 CoachDevOps AI Response
 ============================================================
 
-CI/CD stands for Continuous Integration and
-Continuous Delivery/Deployment.
+CI/CD stands for Continuous Integration
+and Continuous Delivery/Deployment.
 
 ...
 
 ============================================================
 AI Lab 01 Completed Successfully!
 ============================================================
+```
 
-🔄 How to Continue the Lab Later
+🎉 Congratulations!
 
-When you reconnect to your EC2 instance:
+You have successfully executed your first **AI-powered DevOps application**.
 
+---
+
+# 🔄 How to Continue Later
+
+When you reconnect to the EC2 instance:
+
+```bash
 cd ~/ai-basics-labs-repo
+```
 
-Activate the virtual environment:
+Activate the environment:
 
+```bash
 source venv/bin/activate
+```
 
-Then navigate to the required lab.
+Navigate to a lab:
 
-Example:
-
+```bash
 cd ai-lab-01
+```
 
 Run:
 
+```bash
 python hello-ai.py
+```
+
+---
+
+# 🔄 Get Latest Lab Updates
+
+To download newly added labs:
+
+```bash
+cd ~/ai-basics-labs-repo
+
+git pull
+```
+
+---
+
+# 🗺️ Learning Journey
+
+```text
+AI Lab 01
+First LLM Call
+      ↓
+AI Lab 02
+Prompt Engineering
+      ↓
+AI Lab 03
+DevOps AI Assistant
+      ↓
+AI Lab 04
+Multiple DevOps AI Experts
+      ↓
+AI Lab 05
+Web-Based AI Assistant
+      ↓
+Tool Integration
+      ↓
+AI Agent
+      ↓
+SRE Agent
+```
+
+---
+
+# 🚀 Happy Learning!
+
+**CoachDevOps — AI-Assisted DevOps Hands-on Labs**
+
+> Learn AI Basics. Apply AI to DevOps. Automate Intelligently.
