@@ -9,7 +9,7 @@ client = OpenAI(
     api_key=os.getenv("OPENAI_API_KEY")
 )
 
-prompt = """giv
+prompt = """
 What is Jenkins?
 """
 
