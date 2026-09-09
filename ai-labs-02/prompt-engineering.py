@@ -9,17 +9,18 @@ client = OpenAI(
     api_key=os.getenv("OPENAI_API_KEY")
 )
 
+# Prompt 1 — Basic
 prompt = """
 What is Jenkins?
 """
 
-prompt2 = """ 
-You are a Senior DevOps Engineer. Explain Jenkins to a beginner. 
+# Prompt 2 — Add a Role
+prompt2 = """
+You are a Senior DevOps Engineer.
+Explain Jenkins to a beginner.
 """
-#🧪 Example 3 — Add Structure
 
-#Improve the prompt further:
-
+# Prompt 3 — Add Structure
 prompt3 = """
 You are a Senior DevOps Engineer and DevOps Coach.
 
